@@ -38,7 +38,7 @@
                             <li><a class="main-font-color" href="index.html#team">Équipe</a></li>
                             <li><a class="modal-trigger main-font-color" href="#contact">Contactez-nous</a></li>
                             <li><a class="modal-trigger main-font-color" href="#signup">Inscrivez-vous</a></li>
-                            <li><a class="modal-trigger main-font-color" href="#signup">Connectez-vous</a></li>
+                            <li><a class="modal-trigger main-font-color" href="#signin">Connectez-vous</a></li>
                         </ul>
                         <a class="btn-floating waves-effect theme-switcher"><i class="fa-solid fa-moon"></i></a>
                     </div>
@@ -67,6 +67,34 @@
                 <div class="modal-footer main-bg container">
                     <a class=" modal-action modal-close waves-effect waves-white btn-flat white-text gradient-2">Submit</a>
                 </div>
+            </div>
+            <div id="signin" class="modal main-bg">
+                <div class="modal-content container">
+                    <h3 class="flow-text">Connectez-vous</h3>
+                </div>
+                <div class="row container">
+                    <form class="col s12" method="post" action="../model/signin.php">
+                    <div class="row modal-form-row">
+                            <div class="input-field col s11">
+                                <input id="email" name="email" type="email" class="validate white-text">
+                                <label for="email">Email</label>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s11">
+                            <input type="password" name="password" id="password" class="materialize-textarea validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s11">
+                            <input type="submit" value="Submit" class="materialize-textarea validate">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer main-bg container">
+                <a class=" modal-action modal-close waves-effect waves-white btn-flat white-text gradient-2">Submit</a>
             </div>
             <div id="signup" class="modal main-bg">
                 <div class="modal-content container">
@@ -102,4 +130,6 @@
             <div class="modal-footer main-bg container">
                 <a class=" modal-action modal-close waves-effect waves-white btn-flat white-text gradient-2">Submit</a>
             </div>
+
+
         </header>

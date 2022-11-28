@@ -3,6 +3,9 @@
     require "component/header.php";
 ?>
         <main>
+            <?php if(isset($_SESSION['user'])) {
+                echo '<p>connected</p>';
+            }?>
             <div id="carousel">
                 <div class="carousel carousel-slider center">
                     <h1 class="carousel-fixed-item">Portfolio Développeur de Jeux Vidéo</h1>
