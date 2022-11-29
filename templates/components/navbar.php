@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Portfolio Développeur de Jeux Vidéo</title>
-        <meta name="description" content="Ce portefolio présente Anthony Legrix et Gabriel Dalmon, ainsi que les projets étudiants qu'ils ont réalisé au cours de leur cursus pour devenir Développeur de Jeux Vidéo.">
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen">
-        <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Roboto:wght@400;700;900&family=Silkscreen&display=swap" rel="stylesheet">
-    </head>
-    <body class="main-bg">
-        <header>
+<header>
             <ul id="slide-out" class="sidenav main-bg">
                 <li><a class="waves-effect" href="index.html#"><i class="fa-solid fa-house"></i>Accueil</a></li>
                 <li><a class="waves-effect" href="index.html#carousel"><i class="fa-solid fa-folder-open"></i>Projets</a></li>
@@ -37,8 +23,11 @@
                             <li><a class="dropdown-trigger main-font-color" href="index.html#carousel" data-target="dropdown-projects">Projets</a></li>
                             <li><a class="main-font-color" href="index.html#team">Équipe</a></li>
                             <li><a class="modal-trigger main-font-color" href="#contact">Contactez-nous</a></li>
-                            <li><a class="modal-trigger main-font-color" href="#signup">Inscrivez-vous</a></li>
-                            <li><a class="modal-trigger main-font-color" href="#signin">Connectez-vous</a></li>
+                            <?php if (isset($_SESSION['user'])){ ?>
+                                <li><a class="main-font-color" href="../src/queries/disconnect.php">Se déconnecter</a></li>
+                            <?php } else { ?>
+                                <li><a class="modal-trigger main-font-color" href="#signup">Inscrivez-vous</a></li>
+                            <?php } ?>
                         </ul>
                         <a class="btn-floating waves-effect theme-switcher"><i class="fa-solid fa-moon"></i></a>
                     </div>
@@ -69,67 +58,74 @@
                 </div>
             </div>
             <div id="signin" class="modal main-bg">
+                <div class="modal-footer main-bg container">
+                    <a class="modal-action modal-close white-text btn-floating btn-small waves-effect waves-light gradient-2">X</a>
+                </div>
                 <div class="modal-content container">
                     <h3 class="flow-text">Connectez-vous</h3>
                 </div>
                 <div class="row container">
-                    <form class="col s12" method="post" action="../model/signin.php">
-                    <div class="row modal-form-row">
+                    <form class="col s12" method="post" action="../src/queries/signin.php">
+                        <div class="row modal-form-row">
+                                <div class="input-field col s11">
+                                    <input id="email" name="email" type="email" class="validate white-text">
+                                    <label for="email">Email</label>
+                                </div>
+                        </div>
+                        <div class="row">
                             <div class="input-field col s11">
-                                <input id="email" name="email" type="email" class="validate white-text">
-                                <label for="email">Email</label>
+                                <input type="password" name="password" id="password" class="validate white-text">
+                                <label for="password">Password</label>
                             </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s11">
-                            <input type="password" name="password" id="password" class="materialize-textarea validate">
-                            <label for="password">Password</label>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s11">
-                            <input type="submit" value="Submit" class="materialize-textarea validate">
+                        <div class="row">
+                            <div class="input-field col s11">
+                                <input type="submit" value="Submit" class="validate white-text">
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
+                <div class="modal-footer main-bg container">
+                    <a class=" modal-action modal-close modal-trigger waves-effect waves-white btn-flat white-text gradient-2" href="#signup">S'inscrire</a>
+                </div>
             </div>
-            <div class="modal-footer main-bg container">
-                <a class=" modal-action modal-close waves-effect waves-white btn-flat white-text gradient-2">Submit</a>
-            </div>
+
             <div id="signup" class="modal main-bg">
+                <div class="modal-footer main-bg container">
+                    <a class="modal-action modal-close white-text btn-floating btn-small waves-effect waves-light gradient-2">X</a>
+                </div>
                 <div class="modal-content container">
                     <h3 class="flow-text">Inscrivez-vous</h3>
                 </div>
                 <div class="row container">
-                    <form class="col s12" method="post" action="../model/signup.php">
-                    <div class="row modal-form-row">
+                    <form class="col s12" method="post" action="../src/queries/signup.php">
+                        <div class="row modal-form-row">
+                                <div class="input-field col s11">
+                                    <input id="email" name="email" type="email" class="validate white-text">
+                                    <label for="email">Email</label>
+                                </div>
+                        </div>
+                        <div class="row">
                             <div class="input-field col s11">
-                                <input id="email" name="email" type="email" class="validate white-text">
-                                <label for="email">Email</label>
+                                <input id="username" name="username" type="text" class="validate white-text">
+                                <label for="username">Username</label>
                             </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s11">
-                            <input id="username" name="username" type="text" class="validate white-text">
-                            <label for="username">Username</label>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s11">
-                            <input type="password" name="password" id="password" class="materialize-textarea validate">
-                            <label for="password">Password</label>
+                        <div class="row">
+                            <div class="input-field col s11">
+                                <input type="password" name="password" id="password" class="validate white-text">
+                                <label for="password">Password</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s11">
-                            <input type="submit" value="Submit" class="materialize-textarea validate">
+                        <div class="row">
+                            <div class="input-field col s11">
+                                <input type="submit" value="Submit" class="materialize-textarea validate">
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
+                <div class="modal-footer main-bg container">
+                    <a class=" modal-action modal-close modal-trigger waves-effect waves-white btn-flat white-text gradient-2" href="#signin">Se connecter</a>
+                </div>
             </div>
-            <div class="modal-footer main-bg container">
-                <a class=" modal-action modal-close waves-effect waves-white btn-flat white-text gradient-2">Submit</a>
-            </div>
-
-
         </header>

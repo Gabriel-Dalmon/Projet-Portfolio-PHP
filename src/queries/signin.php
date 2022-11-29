@@ -1,10 +1,10 @@
 <?php
-    require_once("../config/config.php");
+    require_once("../../config/config.php");
 
 $sql = "SELECT * FROM users WHERE email=:email AND password=:password";
 $dataBinded=array(
     ':email'   => $_POST['email'],
-    ':password'=> $_POST['password']
+    ':password'=> SHA1("uhwnsdfgbqoiudzgyh<zf4sqg0fe4zs5".$_POST['password'])
 );
 $pre = $pdo->prepare($sql);
 $pre->execute($dataBinded);
@@ -15,6 +15,6 @@ if(!empty($user)){
     $_SESSION['user'] = $user;
 }
 
-header('Location:../templates/index.php');
+header('Location:../../templates/index.php');
 
 ?>

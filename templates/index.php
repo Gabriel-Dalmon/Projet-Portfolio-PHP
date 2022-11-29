@@ -1,7 +1,9 @@
 <?php
     require_once("../config/config.php");
-    require "component/header.php";
+    require "components/header.php";
 ?>
+    <body class="main-bg">
+        <?php require "/components/navbar.php" ?>
         <main>
             <?php if(isset($_SESSION['user'])) {
                 echo '<p>connected</p>';
@@ -250,8 +252,7 @@
                     </div>
                 </div>
             </div>
-
         </main>
 <?php
-    require "component/footer.php";
+    require "components/footer.php";
 ?>
