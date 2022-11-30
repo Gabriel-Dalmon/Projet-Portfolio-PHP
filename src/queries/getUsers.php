@@ -1,8 +1,8 @@
 <?php 
 
-require_once("../../config/config.php");
+require_once("../../../config/config.php");
 
-$sql = "SELECT id, email, username FROM users";
+$sql = "SELECT id, email, username, account_status FROM users";
 
 $pre = $pdo->prepare($sql);
 $pre->execute();

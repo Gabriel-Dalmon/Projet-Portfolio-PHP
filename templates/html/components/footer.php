@@ -28,9 +28,9 @@
                 </div>
             </div>
         </footer>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/materialize.min.js"></script>
-        <script src="js/script.js"></script>
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/materialize.min.js"></script>
+        <script src="../../js/script.js"></script>
         <script src="https://kit.fontawesome.com/c32cdcdbca.js" crossorigin="anonymous"></script>
     </body>
 </html>

@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <title>Portfolio Développeur de Jeux Vidéo</title>
         <meta name="description" content="Ce portefolio présente Anthony Legrix et Gabriel Dalmon, ainsi que les projets étudiants qu'ils ont réalisé au cours de leur cursus pour devenir Développeur de Jeux Vidéo.">
-        <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen">
-        <link type="text/css" rel="stylesheet" href="../css/style.css"  media="screen">
+        <link type="text/css" rel="stylesheet" href="../../css/materialize.min.css"  media="screen">
+        <link type="text/css" rel="stylesheet" href="../../css/style.css"  media="screen">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,8 +23,8 @@
                         <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only"><i class="fa-solid fa-bars"></i></a>
                         <div class="brand-logo right"><a href="https://gamingcampus.fr/" rel="nofollow"><img src="img/logo_header.webp" alt="Logo Gaming Campus"></a></div>
                         <ul id="nav-mobile" class="left hide-on-med-and-down">
-                            <li><a class="main-font-color" href="index.php">Accueil</a></li>
-                            <li><a class="main-font-color" href="../src/queries/disconnect.php">Se déconnecter</a></li>
+                            <li><a class="main-font-color" href="homepage.php">Accueil</a></li>
+                            <li><a class="main-font-color" href="../../../src/queries/disconnect.php">Se déconnecter</a></li>
                         </ul>
                         <a class="btn-floating waves-effect theme-switcher"><i class="fa-solid fa-moon"></i></a>
                     </div>
@@ -32,13 +32,33 @@
             </div>
         </header>
         <main>
-            <?php require_once("../../src/queries/getUsers.php") ?>
-            <div id="users">
-                <ul>
-                    <?php foreach($users as $user) { ?>
-                        <li><p><?php echo $user['username']." | ".$user['email'] ?><p><a></a></li>
-                    <?php } ?>
-                </ul>
+            <?php require_once("../../../src/queries/getUsers.php") ?>
+            <div id="users" class="container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pseudo</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($users as $user) { ?>
+                        <tr>
+                            <td><?php echo $user['username']; ?></td>
+                            <td><?php echo $user['email']; ?></td>
+                            <td><?php echo $user['account_status']==0?"Invité":($user['account_status']==1?"Créateur":"Admin") ?></td>
+                            <td class="row">
+                                <form class="col s4" method="post" action="../../../src/queries/toggle_status.php"><input type="hidden" name="id" value=<?php echo $user['id']?>><input type="hidden" name="account_status" value=<?php echo $user['account_status'] == 0?1:($user['account_status'] == 1?2:0) ?>><input class="btn waves-effect" type=submit value="Toggle Status">
+                                </form>
+                                <form class="col s4" method="post" action="../../../src/queries/delete_user.php"><input type="hidden" name="id" value=<?php echo $user['id']?>><input class="btn waves-effect" type=submit value="Delete">
+                                </form>
+                            </td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
             </div>
             <div id="projects">
                 

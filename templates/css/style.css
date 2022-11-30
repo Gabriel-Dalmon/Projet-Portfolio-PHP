@@ -179,7 +179,6 @@ nav a,.sidenav a, .sidenav i, .dropdown-content a, footer .nav a, footer p{
 .row .col {
     padding: 0;
 }
-
 .btn-floating:hover, .btn:hover {
     outline: 3px solid white;
     transition: .1s;
@@ -207,3 +206,8 @@ nav a,.sidenav a, .sidenav i, .dropdown-content a, footer .nav a, footer p{
 main {
     margin-bottom: 4rem;
 }
+
+input {
+    color: white;
+    font-weight: bold;
+  }

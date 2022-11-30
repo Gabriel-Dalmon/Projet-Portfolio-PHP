@@ -1,9 +1,9 @@
 <?php
-    require_once("../config/config.php");
-    require "components/header.php";
+    require_once("../../../config/config.php");
+    require "../components/head.php";
 ?>
     <body class="main-bg">
-        <?php require "/components/navbar.php" ?>
+        <?php require "../components/navbar.php" ?>
         <main>
             <?php if(isset($_SESSION['user'])) {
                 echo '<p>connected</p>';
@@ -47,7 +47,7 @@
                 <div class="col s12 l5 row">
                     <div class="col s12 row">
                         <div class="col s12 row valign-wrapper">
-                            <img class="col s6" src="img/gabriel_profile_pic.webp" alt="Profile picture of Gabriel">
+                            <img class="col s6" src="../../img/gabriel_profile_pic.webp" alt="Profile picture of Gabriel">
                             <div class="col s6">
                                 <p>
                                     <span class="bold legend">Gabriel DALMON</span>
@@ -151,7 +151,7 @@
                 <div class="col s12 l5 offset-l2 row">
                     <div class="col s12 row">
                         <div class="col s12 row valign-wrapper">
-                            <img class="col s6" src="img/anthony_profile_pic.webp" alt="Profile picture of Anthony">
+                            <img class="col s6" src="../../img/anthony_profile_pic.webp" alt="Profile picture of Anthony">
                             <div class="col s6">
                                 <p>
                                     <span class="bold legend">Anthony LEGRIX</span>
@@ -254,5 +254,5 @@
             </div>
         </main>
 <?php
-    require "components/footer.php";
+    require "../components/footer.php";
 ?>
