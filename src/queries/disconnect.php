@@ -3,5 +3,5 @@
 
     unset($_SESSION['user']);
 
-    header('Location:../../templates/index.php');
+    header('Location:../../templates/html/pages/homepage.php');
 ?>

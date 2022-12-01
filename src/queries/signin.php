@@ -15,6 +15,5 @@ if(!empty($user)){
     $_SESSION['user'] = $user;
 }
 
-header('Location:../../templates/index.php');
-
+header('Location:../../templates/html/pages/homepage.php');
 ?>
