@@ -28,5 +28,4 @@ foreach ($users as &$user) {
     $user['socials'] = $pre->fetchAll(PDO::FETCH_ASSOC);
 }
 
-
 ?>

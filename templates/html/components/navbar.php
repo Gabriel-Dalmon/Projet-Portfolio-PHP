@@ -19,7 +19,7 @@
                 <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only"><i class="fa-solid fa-bars"></i></a>
                 <div class="brand-logo right"><a href="https://gamingcampus.fr/" rel="nofollow"><img src="../../img/logo_header.webp" alt="Logo Gaming Campus"></a></div>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><a class="main-font-color" href="index.html#">Accueil</a></li>
+                    <li><a class="main-font-color" href="homepage.php">Accueil</a></li>
                     <li><a class="dropdown-trigger main-font-color" href="index.html#carousel" data-target="dropdown-projects">Projets</a></li>
                     <li><a class="main-font-color" href="index.html#team">Équipe</a></li>
                     <li><a class="modal-trigger main-font-color" href="#contact">Contactez-nous</a></li>
@@ -27,6 +27,7 @@
                         <li><a class="main-font-color" href="adminpage.php">Panel Admin</a></li>
                     <?php } ?>
                     <?php if (isset($_SESSION['user'])){ ?>
+                        <li><a class="main-font-color" href="profile_editor.php">Profil</a></li>
                         <li><a class="main-font-color" href="../../../src/queries/disconnect.php">Se déconnecter</a></li>
                     <?php } else { ?>
                         <li><a class="modal-trigger main-font-color" href="#signup">Inscrivez-vous</a></li>
@@ -44,13 +45,13 @@
             <form class="col s12">
                 <div class="row modal-form-row">
                 <div class="input-field col s11">
-                    <input id="question" type="text" class="validate white-text">
+                    <input id="question" type="text" class="validate white-text" required>
                     <label for="question">Question</label>
                 </div>
                 </div>
                 <div class="row">
                 <div class="input-field col s11">
-                    <textarea id="question_description" class="materialize-textarea validate"></textarea>
+                    <textarea id="question_description" class="materialize-textarea validate" required></textarea>
                     <label for="question_description">Description</label>
                 </div>
                 </div>
@@ -71,19 +72,19 @@
             <form class="col s12" method="post" action="../../../src/queries/signin.php">
                 <div class="row modal-form-row">
                         <div class="input-field col s11">
-                            <input id="email" name="email" type="email" class="validate white-text">
+                            <input id="email" name="email" type="email" class="validate white-text" autofocus required>
                             <label for="email">Email</label>
                         </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s11">
-                        <input type="password" name="password" id="password" class="validate white-text">
+                        <input type="password" name="password" id="password" class="validate white-text" required>
                         <label for="password">Password</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s11">
-                        <input type="submit" value="Submit" class="validate white-text">
+                        <input type="submit" value="Submit" class="btn validate white-text">
                     </div>
                 </div>
             </form>
@@ -91,7 +92,8 @@
         <div class="modal-footer main-bg container">
             <a class=" modal-action modal-close modal-trigger waves-effect waves-white btn-flat white-text gradient-2" href="#signup">S'inscrire</a>
         </div>
-    </div>    <div id="signup" class="modal main-bg">
+    </div>    
+    <div id="signup" class="modal main-bg">
         <div class="modal-footer main-bg container">
             <a class="modal-action modal-close white-text btn-floating btn-small waves-effect waves-light gradient-2">X</a>
         </div>
@@ -102,25 +104,25 @@
             <form class="col s12" method="post" action="../../../src/queries/signup.php">
                 <div class="row modal-form-row">
                         <div class="input-field col s11">
-                            <input id="email" name="email" type="email" class="validate white-text">
+                            <input id="email" name="email" type="email" class="validate white-text" autofocus required>
                             <label for="email">Email</label>
                         </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s11">
-                        <input id="username" name="username" type="text" class="validate white-text">
+                        <input id="username" name="username" type="text" class="validate white-text" required>
                         <label for="username">Username</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s11">
-                        <input type="password" name="password" id="password" class="validate white-text">
+                        <input type="password" name="password" id="password" class="validate white-text" required>
                         <label for="password">Password</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s11">
-                        <input type="submit" value="Submit" class="materialize-textarea validate">
+                        <input type="submit" value="Submit" class="btn validate">
                     </div>
                 </div>
             </form>

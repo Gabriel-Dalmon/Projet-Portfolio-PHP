@@ -4,6 +4,10 @@
 ?>
 
 <body class="main-bg">
-        <?php require "../components/navbar.php" ?>
-        <main>
-            <form></form>
+    <?php require "../components/navbar.php" ?>
+    <main>
+        <?php require "../components/forms/user_experience.php" ?>
+    </main>
+</body>
+
+<?php require "../components/footer.php" ?>
