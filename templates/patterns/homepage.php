@@ -15,25 +15,25 @@
             <div class="carousel-item valign-wrapper" href="#one!">
                 <div class="bg-filter"></div>
                 <div class="slide-content">
-                    <h2 class="flow-text">Site Web Pure HTML/CSS</h2>
-                    <p>This is your first panel</p>
-                    <a class="btn waves-effect" href="projects/project1.html">Découvrir</a>
+                    <h2 class="flow-text"><?php echo $projects[0]['title']?></h2>
+                    <p><?php echo $projects[0]['intro']?></p>
+                    <a class="btn waves-effect" href="index.php?page=project_page&project_id=<?php echo $projects[0]['id']?>">Découvrir</a>
                 </div>
             </div>
             <div class="carousel-item valign-wrapper" href="#two!">
                 <div class="bg-filter"></div>
                 <div class="slide-content">
-                    <h2>Site Web Pure HTML/CSS</h2>
-                    <p>This is your first panel</p>
-                    <a class="btn waves-effect" href="projects/project2.html">Découvrir</a>
+                    <h2><?php echo $projects[1]['title']?></h2>
+                    <p><?php echo $projects[1]['intro']?></p>
+                    <a class="btn waves-effect" href="index.php?page=project_page&project_id=<?php echo $projects[1]['id']?>">Découvrir</a>
                 </div>
             </div>
             <div class="carousel-item valign-wrapper" href="#three!">
                 <div class="bg-filter"></div>
                 <div class="slide-content">
-                    <h2>Portfolio HTML/Framework CSS/JQuery</h2>
-                    <p>This is your first panel</p>
-                    <a class="btn waves-effect" href="projects/project3.html">Découvrir</a>
+                    <h2><?php echo $projects[2]['title']?></h2>
+                    <p><?php echo $projects[2]['intro']?></p>
+                    <a class="btn waves-effect" href="index.php?page=project_page&project_id=<?php echo $projects[2]['id']?>">Découvrir</a>
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@
     <div id="team" class="container section row flow-text main-font-color">
         <h2 class="col s12 center-align">Notre équipe</h2>
         <?php foreach ($users as &$user) { ?>
-            <div class="col s12 l5 <?php echo $users['1']['username']==$user['username']?"offset-l2":""?> row">
+            <div class="col s12 l5 <?php echo $users[1]['username']==$user['username']?"offset-l2":""?> row">
                 <div class="col s12 row">
                     <div class="col s12 row valign-wrapper">
                         <img class="col s6" src="templates/img/users/<?php echo $user['profile_picture'] ?>" alt="Profile picture">

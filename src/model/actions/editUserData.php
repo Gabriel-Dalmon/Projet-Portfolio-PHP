@@ -85,10 +85,22 @@ function update_status($user){
 }
 
 function del_user($user){
-    $sql = "DELETE FROM users WHERE id=:id";
     $dataBinded=array(
         ':id'   => $user['id']
     );
+    $sql = "DELETE FROM users WHERE id=:id";
+    $pre = $GLOBALS['pdo']->prepare($sql);
+    $pre->execute($dataBinded);
+
+    $sql = "DELETE FROM skills WHERE user_id=:id";
+    $pre = $GLOBALS['pdo']->prepare($sql);
+    $pre->execute($dataBinded);
+
+    $sql = "DELETE FROM experiences WHERE user_id=:id";
+    $pre = $GLOBALS['pdo']->prepare($sql);
+    $pre->execute($dataBinded);
+    
+    $sql = "DELETE FROM socials WHERE user_id=:id";
     $pre = $GLOBALS['pdo']->prepare($sql);
     $pre->execute($dataBinded);
 }
