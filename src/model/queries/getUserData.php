@@ -80,4 +80,14 @@ function getAllData($user_id){
     return $user;
 }
 
+function getAllUsers(){
+    $sql = "SELECT * FROM users";
+    $pre = $GLOBALS['pdo']->prepare($sql);
+    $pre->execute();
+    $users = $pre->fetchAll(PDO::FETCH_ASSOC);
+
+    return $users;
+}
+
+
 ?>

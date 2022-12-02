@@ -30,7 +30,7 @@ function del_skill($skill){
         ':user_id'   => $skill['user_id'],
         ':name'   => $skill['name']
     );
-    $query = "DELETE FROM experiences WHERE user_id=:user_id AND name=:name";
+    $query = "DELETE FROM skills WHERE user_id=:user_id AND name=:name";
     $pre = $GLOBALS['pdo']->prepare($query);
     $pre->execute($dataBinded);
 }
@@ -70,5 +70,27 @@ function update_experience($experience){
     $pre->execute($dataBinded);
 }
 
+
+// v Admin Actions v
+
+
+function update_status($user){
+    $dataBinded=array(
+        ':id'   => $user['id'],
+        ':status' => $user['account_status']
+    );
+    $sql = "UPDATE users SET account_status = :status WHERE id=:id";
+    $pre = $GLOBALS['pdo']->prepare($sql);
+    $pre->execute($dataBinded);
+}
+
+function del_user($user){
+    $sql = "DELETE FROM users WHERE id=:id";
+    $dataBinded=array(
+        ':id'   => $user['id']
+    );
+    $pre = $GLOBALS['pdo']->prepare($sql);
+    $pre->execute($dataBinded);
+}
 ?>
 

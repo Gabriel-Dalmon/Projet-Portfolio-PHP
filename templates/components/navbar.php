@@ -24,7 +24,7 @@
                     <li><a class="main-font-color" href="index.html#team">Équipe</a></li>
                     <li><a class="modal-trigger main-font-color" href="#contact">Contactez-nous</a></li>
                     <?php if (isset($_SESSION['user']) AND ($_SESSION['user']['account_status'] == 2)) { ?>
-                        <li><a class="main-font-color" href="index.php?page=adminpage">Panel Admin</a></li>
+                        <li><a class="main-font-color" href="index.php?page=admin_panel">Panel Admin</a></li>
                     <?php } ?>
                     <?php if (isset($_SESSION['user'])){ ?>
                         <li><a class="main-font-color" href="index.php?page=profile_editor">Profil</a></li>
