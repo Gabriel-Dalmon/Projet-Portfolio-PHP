@@ -11,7 +11,7 @@ $dataBinded=array(
     ':end_date' => $_POST['end_date'],
     ':id'   => $_POST['id']
 );
-$pre = $pdo->prepare($sql);
+$pre = $GLOBALS['pdo']->prepare($sql);
 $pre->execute($dataBinded);
 
 header('Location:../../templates/html/pages/profile_editor.php');

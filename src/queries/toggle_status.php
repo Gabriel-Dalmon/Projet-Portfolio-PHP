@@ -6,7 +6,7 @@ $dataBinded=array(
     ':status' => $_POST['account_status'],
     ':id'   => $_POST['id']
 );
-$pre = $pdo->prepare($sql);
+$pre = $GLOBALS['pdo']->prepare($sql);
 $pre->execute($dataBinded);
 
 header('Location:../../templates/html/pages/adminpage.php');

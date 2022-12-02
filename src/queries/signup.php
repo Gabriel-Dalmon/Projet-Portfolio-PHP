@@ -5,7 +5,7 @@ $sql = "SELECT email FROM users WHERE email=:email";
 $dataBinded=array(
     ':email'   => $_POST['email']
 );
-$pre = $pdo->prepare($sql);
+$pre = $GLOBALS['pdo']->prepare($sql);
 $pre->execute($dataBinded);
 $email = $pre->fetch(PDO::FETCH_ASSOC);
 
@@ -16,7 +16,7 @@ if(empty($email)){
         ':username' => $_POST['username'],
         ':password'=> SHA1("uhwnsdfgbqoiudzgyh<zf4sqg0fe4zs5".$_POST['password'])
     );
-    $pre = $pdo->prepare($sql);
+    $pre = $GLOBALS['pdo']->prepare($sql);
     $pre->execute($dataBinded);
 }
     //:email et :password sont bindés dans ma requêtes
