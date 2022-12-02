@@ -1,7 +1,8 @@
 <?php
     require_once("../../../config/config.php");
     require "../components/head.php";
-    require_once("../../../src/queries/getUsersData.php")
+    require_once("../../../src/queries/getUsersData.php");
+    require_once("../../../src/controllers/actions.php");
 ?>
     <body class="main-bg">
         <?php require "../components/navbar.php" ?>

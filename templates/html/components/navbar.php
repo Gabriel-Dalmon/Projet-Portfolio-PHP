@@ -28,7 +28,7 @@
                     <?php } ?>
                     <?php if (isset($_SESSION['user'])){ ?>
                         <li><a class="main-font-color" href="profile_editor.php">Profil</a></li>
-                        <li><a class="main-font-color" href="../../../src/queries/disconnect.php">Se déconnecter</a></li>
+                        <li><a class="main-font-color" href="../../../src/controllers/actions_router.php?type=disconnect&path=<?php echo $_SERVER['REQUEST_URI'] ?>">Se déconnecter</a></li>
                     <?php } else { ?>
                         <li><a class="modal-trigger main-font-color" href="#signup">Inscrivez-vous</a></li>
                     <?php } ?>
