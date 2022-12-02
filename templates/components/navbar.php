@@ -17,18 +17,18 @@
         <nav>
             <div class="nav-wrapper main-bg">
                 <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only"><i class="fa-solid fa-bars"></i></a>
-                <div class="brand-logo right"><a href="https://gamingcampus.fr/" rel="nofollow"><img src="../../img/logo_header.webp" alt="Logo Gaming Campus"></a></div>
+                <div class="brand-logo right"><a href="https://gamingcampus.fr/" rel="nofollow"><img src="templates/img/logo_header.webp" alt="Logo Gaming Campus"></a></div>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
                     <li><a class="main-font-color" href="homepage.php">Accueil</a></li>
                     <li><a class="dropdown-trigger main-font-color" href="index.html#carousel" data-target="dropdown-projects">Projets</a></li>
                     <li><a class="main-font-color" href="index.html#team">Équipe</a></li>
                     <li><a class="modal-trigger main-font-color" href="#contact">Contactez-nous</a></li>
                     <?php if (isset($_SESSION['user']) AND ($_SESSION['user']['account_status'] == 2)) { ?>
-                        <li><a class="main-font-color" href="adminpage.php">Panel Admin</a></li>
+                        <li><a class="main-font-color" href="index.php?page=adminpage">Panel Admin</a></li>
                     <?php } ?>
                     <?php if (isset($_SESSION['user'])){ ?>
-                        <li><a class="main-font-color" href="profile_editor.php">Profil</a></li>
-                        <li><a class="main-font-color" href="../../../src/controllers/actions_router.php?type=disconnect&path=<?php echo $_SERVER['REQUEST_URI'] ?>">Se déconnecter</a></li>
+                        <li><a class="main-font-color" href="index.php?page=profile_editor">Profil</a></li>
+                        <li><a class="main-font-color" href="src/controllers/actions_router.php?type=disconnect&path=<?php echo $_SERVER['REQUEST_URI'] ?>">Se déconnecter</a></li>
                     <?php } else { ?>
                         <li><a class="modal-trigger main-font-color" href="#signup">Inscrivez-vous</a></li>
                     <?php } ?>
@@ -69,7 +69,7 @@
             <h3 class="flow-text">Connectez-vous</h3>
         </div>
         <div class="row container">
-            <form class="col s12" method="post" action="../../../src/queries/signin.php">
+            <form class="col s12" method="post" action="src/queries/signin.php">
                 <div class="row modal-form-row">
                         <div class="input-field col s11">
                             <input id="email" name="email" type="email" class="validate white-text" autofocus required>
@@ -101,7 +101,7 @@
             <h3 class="flow-text">Inscrivez-vous</h3>
         </div>
         <div class="row container">
-            <form class="col s12" method="post" action="../../../src/queries/signup.php">
+            <form class="col s12" method="post" action="src/queries/signup.php">
                 <div class="row modal-form-row">
                         <div class="input-field col s11">
                             <input id="email" name="email" type="email" class="validate white-text" autofocus required>

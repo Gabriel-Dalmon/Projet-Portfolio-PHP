@@ -1,4 +1,5 @@
-<?php require_once("../../config/config.php");
+<?php 
+require_once("../../config/config.php");
 require_once("actions.php");
 
 

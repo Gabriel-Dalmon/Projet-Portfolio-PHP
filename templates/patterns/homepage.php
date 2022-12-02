@@ -1,11 +1,7 @@
 <?php
-    require_once("../../../config/config.php");
-    require "../components/head.php";
-    require_once("../../../src/queries/getUsersData.php");
-    require_once("../../../src/controllers/actions.php");
+    require_once("/src/queries/getUsersData.php");
+    require_once("/src/controllers/actions.php");
 ?>
-    <body class="main-bg">
-        <?php require "../components/navbar.php" ?>
         <main>
             <?php if(isset($_SESSION['user'])) {
                 echo '<p>connected</p>';
@@ -50,7 +46,7 @@
                     <div class="col s12 l5 <?php echo $users['1']['username']==$user['username']?"offset-l2":""?> row">
                         <div class="col s12 row">
                             <div class="col s12 row valign-wrapper">
-                                <img class="col s6" src="../../img/users/<?php echo $user['profile_picture'] ?>" alt="Profile picture of Gabriel">
+                                <img class="col s6" src="templates/img/users/<?php echo $user['profile_picture'] ?>" alt="Profile picture of Gabriel">
                                 <div class="col s6">
                                     <p>
                                         <span class="bold legend"><?php echo $user['username'];?></span>
@@ -76,7 +72,7 @@
                                 <?php } ?>
                             </ul>
                         </div>
-                        <?php require_once("../../../src/generators/skills.php");
+                        <?php require_once("/src/generators/skills.php");
                         genAllSkills($user['skills']);
                         ?>
                         <div class="col s6 m5 l12">
@@ -96,6 +92,3 @@
             <?php } ?>
             </div>
         </main>
-<?php
-    require "../components/footer.php";
-?>

@@ -24,6 +24,6 @@ if(empty($email)){
     //la donnée est liée au bind !
     //lorsqu'on execute la requête, on indique à quelles données correspondent chaque "bind"
 
-header('Location:../../templates/html/pages/homepage.php');
+header('Location:../../index.php');
 
 ?>

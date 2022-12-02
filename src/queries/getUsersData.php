@@ -1,6 +1,6 @@
 <?php 
 
-require_once("../../../config/config.php"); 
+
 
 $sql = "SELECT id, username, profile_picture, bio, qualities FROM users WHERE id IN (5,8)";
 $pre = $pdo->prepare($sql);
