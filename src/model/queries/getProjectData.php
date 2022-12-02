@@ -51,7 +51,6 @@ function getAllProjects(){
     return $projects;
 }
 
-
 function getThreeProjects(){
     $sql = "SELECT * FROM projects LIMIT 3";
     $pre = $GLOBALS['pdo']->prepare($sql);

@@ -1,5 +1,4 @@
 <?php
-
 require("/src/model/queries/getUserData.php");
 require("/src/model/queries/getProjectData.php");
 $users = getAllUsers();

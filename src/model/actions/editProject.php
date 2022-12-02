@@ -21,7 +21,6 @@ function upload_file($image){
 }
 
 function add_project($project){
-    
     $dataBinded=array(
         ':title'   => $project['title'],
         ':intro'   => $project['intro'],
